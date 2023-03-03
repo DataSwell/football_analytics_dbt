@@ -1,0 +1,97 @@
+version: 2
+
+sources:
+  - name: src_football
+    description: Dataset about NFL and College Football (NCAA) games
+    database: FootballAnalytics
+    schema: public
+    tables:
+      - name: sd_scores
+        description: Data for each football game from SportsData API
+        columns:
+          - name: game_key
+            description: Unique key for each game.
+            tests:
+            - not_null
+            - unique
+
+      - name: sd_stadiums
+        description: Information about the stadiums of the NFL games.
+        columns:
+          - name: stadiumid
+            description: Unique key for each stadium.
+            tests:
+            - not_null
+            - unique
+
+      - name: sd_standings
+        description: Weekly standings in the regular season.
+
+      - name: sd_team_stats
+        description: Team stats for each team and each played week.
+      
+      - name: sd_teams
+        description: Information about each NFL team.
+        columns:
+          - name: teamid
+            description: Unique key for each team.
+            tests:
+            - not_null
+            - unique
+      
+      - name: kg_scores_bets
+        description: Information about each NFL game with the correct scores.
+      
+      - name: kg_stadiums
+        description: Information about the stadiums of the NFL games from the kaggle dataset.
+        columns:
+          - name: stadium_name
+            description: Unique name for each stadium.
+            tests:
+            - not_null
+            - unique        
+      
+      - name: kg_teams
+        description: Information about each NFL team from the Kaggle dataset.
+        columns:
+          - name: team_name
+            description: Unique name for each team.
+            tests:
+            - not_null
+            - unique
+      
+      - name: ncaa_games
+        description: Information about each NCAA game.
+        columns:
+          - name: gameid
+            description: Unique key for each NCAA game.
+            tests:
+            - not_null
+            - unique
+      
+      - name: ncaa_stadiums
+        description: Information about the stadiums of the NCAA games.
+        columns:
+          - name: stadiummid
+            description: Unique key for each stadium of NCAA games.
+            tests:
+            - not_null
+            - unique
+      
+      - name: ncaa_teams
+        description: Information about each NCAA team.
+        columns:
+          - name: teamid
+            description: Unique key for each NCAA team.
+            tests:
+            - not_null
+            - unique
+      
+      - name: ncaa_teams_season
+        description: Season stats for each team and season type (pre, regular, post)
+        columns:
+          - name: statid
+            description: Unique key for each team season stat.
+            tests:
+            - not_null
+            - unique
