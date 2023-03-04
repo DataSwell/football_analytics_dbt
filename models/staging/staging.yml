@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_kg_games
+    columns:
+      - name: game_id
+        description: Unique surrogate key for each game.
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_kg_stadiums
+    columns:
+      - name: stadium_name
+        description: Unique name for each stadium.
+        tests:
+          - unique
+          - not_null     
+
+  - name: stg_kg_teams
+    columns:
+      - name: team_name
+        description: Unique name for each team.
+        tests:
+          - unique
+          - not_null  

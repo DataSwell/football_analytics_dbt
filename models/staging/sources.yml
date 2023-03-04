@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: src_football
-    description: Dataset about NFL and College Football (NCAA) games
+    description: Dataset about NFL and College Football (NCAA) games from Kaggle and SportsData API.
     database: FootballAnalytics
     schema: public
     tables:
@@ -72,7 +72,7 @@ sources:
       - name: ncaa_stadiums
         description: Information about the stadiums of the NCAA games.
         columns:
-          - name: stadiummid
+          - name: stadiumid
             description: Unique key for each stadium of NCAA games.
             tests:
             - not_null
