@@ -1,6 +1,6 @@
-with source as (
+with nfl_games as (
 
     select * from {{ source('src_football', 'sd_scores')}}
 )
 
-select * from source
+select * from nfl_games

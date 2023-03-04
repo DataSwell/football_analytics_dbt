@@ -1,0 +1,51 @@
+State_ID,State_Name,State Capital,Region
+AL,Alabama,Montgomery,South
+AK,Alaska,Juneau,West
+AZ,Arizona,Phoenix,West
+AR,Arkansas,Little Rock,South
+CA,California,Sacramento,West
+CO,Colorado,Denver,West
+CT,Connecticut,Hartford,Northeast
+DE,Delaware,Dover,Northeast
+FL,Florida,Tallahassee,South
+GA,Georgia,Atlanta,South
+HI,Hawaii,Honolulu,West
+ID,Idaho,Boise,West
+IL,Illinois,Springfield,Midwest
+IN,Indiana,Indianapolis,Midwest
+IA,Iowa,Des Moines,Midwest
+KS,Kansas,Topeka,Midwest
+KY,Kentucky,Frankfort,South
+LA,Louisiana,Baton Rouge,South
+ME,Maine,Augusta,Northeast
+MD,Maryland,Annapolis,Northeast
+MA,Massachusetts,Boston,Northeast
+MI,Michigan,Lansing,Midwest
+MN,Minnesota,St. Paul,Midwest
+MS,Mississippi,Jackson,South
+MO,Missouri,Jefferson City,Midwest
+MT,Montana,Helena,West
+NE,Nebraska,Lincoln,Midwest
+NV,Nevada,Carson City,West
+NH,New Hampshire,Concord,Northeast
+NJ,New Jersey,Trenton,Northeast
+NM,New Mexico,Santa Fe,West
+NY,New York,Albany,Northeast
+NC,North Carolina,Raleigh,South
+ND,North Dakota,Bismarck,Midwest
+OH,Ohio,Columbus,Midwest
+OK,Oklahoma,Oklahoma City,South
+OR,Oregon,Salem,West
+PA,Pennsylvania,Harrisburg,Northeast
+RI,Rhode Island,Providence,Northeast
+SC,South Carolina,Columbia,South
+SD,South Dakota,Pierre,Midwest
+TN,Tennessee,Nashville,South
+TX,Texas,Austin,South
+UT,Utah,Salt Lake City,West
+VT,Vermont,Montpelier,Northeast
+VA,Virginia,Richmond,South
+WA,Washington,Olympia,West
+WV,West Virginia,Charleston,South
+WI,Wisconsin,Madison,Midwest
+WY,Wyoming,Cheyenne,West

@@ -1,6 +1,6 @@
-with source as (
+with kg_teams as (
 
     select * from {{ source('src_football', 'kg_teams') }}
-    )
+)
 
-select * from source
+select * from kg_teams
