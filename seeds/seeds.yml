@@ -1,8 +1,12 @@
 version: 2
 
 seeds:
-  - name: calendar
-    description: CSV file with all important date formats for the time dimension
   
   - name: states
     description: List of the american states and their shortcuts
+    columns:
+      - name: states.State_ID
+        description: Unique id for each state.
+#        tests:
+#          - not_null
+#          - unique

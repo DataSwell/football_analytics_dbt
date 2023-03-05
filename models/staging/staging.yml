@@ -8,6 +8,20 @@ models:
         tests:
           - unique
           - not_null
+      - name: team_away
+        description: Name of the guest team for this game.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_kg_teams')
+              field: team_name
+      - name: team_home
+        description: Name of the home team of this game.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_kg_teams')
+              field: team_name
 
   - name: stg_kg_stadiums
     columns:
@@ -23,4 +37,139 @@ models:
         description: Unique name for each team.
         tests:
           - unique
-          - not_null  
+          - not_null 
+
+  - name: stg_ncaa_games
+    columns: 
+      - name: game_id
+        description: Unique key for each college game.
+        tests:
+        - not_null 
+        - unique
+      - name: away_team_id
+        description: Foreign key of the team table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_ncaa_teams')
+              field: team_id
+      - name: home_team_id
+        description: Foreign key of the team table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_ncaa_teams')
+              field: team_id
+      - name: stadium_id
+        description: Foreign key of the stadium table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_ncaa_stadiums')
+              field: stadium_id
+
+  - name: stg_ncaa_stadiums
+    columns:
+      - name: stadium_id
+        description: Unique key for each stadium.
+        tests:
+        - not_null 
+        - unique
+
+  - name: stg_ncaa_teams_season
+    columns:
+      - name: statid
+        description: Unique key for each seasonstat per team.
+        tests:
+        - not_null 
+        - unique
+      - name: teamid
+        description: Foreign key from ncaa team table.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_ncaa_teams')
+              field: team_id
+
+  - name: stg_ncaa_teams
+    columns:
+      - name: team_id
+        description: Unique key for each college team.
+        tests:
+        - not_null 
+        - unique
+
+  - name: stg_nfl_games
+    columns:
+      - name: game_key
+        description: Unique key for each game.
+        tests:
+        - not_null 
+        - unique
+      - name: away_teamid
+        description: Foreign key of the team table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_nfl_teams')
+              field: team_id
+      - name: home_teamid
+        description: Foreign key of the team table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_nfl_teams')
+              field: team_id
+      - name: stadiumid
+        description: Foreign key of the stadium table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_nfl_stadiums')
+              field: stadium_id
+
+  - name: stg_nfl_stadiums
+    columns:
+      - name: stadium_id
+        description: Unique key for each NFL stadium
+        tests:
+        - not_null 
+        - unique
+
+  - name: stg_nfl_standings
+    columns:
+      - name: standings_id
+        description: Unique key for each team standing after each game week.
+        tests:
+        - not_null 
+        - unique
+      - name: team_id
+        description: Foreign key of the team table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_nfl_teams')
+              field: team_id
+
+  - name: stg_nfl_team_stats
+    columns:
+      - name: team_stat_id
+        description: Unique key for each team stat after each game played
+        tests:
+        - not_null 
+        - unique
+      - name: team_id
+        description: Foreign key of the team table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_nfl_teams')
+              field: team_id
+
+  - name: stg_nfl_teams
+    columns:
+      - name: team_id
+        description: Unique key for each NFL team
+        tests:
+        - not_null 
+        - unique

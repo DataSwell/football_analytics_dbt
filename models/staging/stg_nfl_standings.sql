@@ -7,7 +7,7 @@ nfl_standings as (
 
     select
         -- create unique surrogate key for each standing per season, seasontype, team and week
-        concat_ws('-', season, season_type, week, teamid),
+        concat_ws('-', season, season_type, week, teamid) as standings_id,
         season,
         season_type,
         week as game_week,
