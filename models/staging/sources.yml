@@ -7,7 +7,7 @@ sources:
     schema: public
     tables:
       - name: sd_scores
-        description: Data for each football game from SportsData API
+        description: Data for each NFL football game from SportsData API. But some of the scores are scrambeled and not the real score.
         columns:
           - name: game_key
             description: Unique key for each game.
@@ -25,7 +25,7 @@ sources:
             - unique
 
       - name: sd_standings
-        description: Weekly standings in the regular season.
+        description: Weekly standings in the regular season 2022 for the game weeks 4-18.
 
       - name: sd_team_stats
         description: Team stats for each team and each played week.

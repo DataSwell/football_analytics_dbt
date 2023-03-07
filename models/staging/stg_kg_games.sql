@@ -7,7 +7,7 @@ kg_games as (
 
     select    
         -- concat to create surrogate key
-        concat_ws('-', schedule_date:: varchar(10), team_home, team_away) as game_id,
+        concat_ws('-', schedule_date:: varchar(10), team_home) as game_id,
         schedule_date as date,
         schedule_season as season,
         schedule_week as week,
@@ -16,16 +16,18 @@ kg_games as (
         score_home,
         team_away,
         score_away,
-        team_favorite_id,
-        spread_favorite,
-        over_under_line,
+        case when score_home > score_away then 'Hometeam win' else 'Awayteam win' end as home_or_away_win,
+        case when team_favorite_id = 'NaN' then null else team_favorite_id end,
+        case when spread_favorite = 'NaN' then null else spread_favorite end,
+        case when over_under_line = 'NaN' then null else over_under_line end,
         stadium_name,
         stadium_neutral,
-        weather_temperature as temperature,
-        weather_wind_mph as wind_mph,
-        weather_humidity as humidiy
+        case when weather_temperature = 'NaN' then null else weather_temperature end as temperature,
+        case when weather_wind_mph = 'NaN' then null else weather_wind_mph end as wind_mph,
+        case when weather_humidity = 'NaN' then null else weather_humidity end as humidity
 
     from source
 )
+
 
 select * from kg_games

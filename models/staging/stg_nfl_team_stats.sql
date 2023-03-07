@@ -34,6 +34,7 @@ nfl_team_stats as (
         times_sacked_percentage
 
     from source
+    
 )
 
 select * from nfl_team_stats

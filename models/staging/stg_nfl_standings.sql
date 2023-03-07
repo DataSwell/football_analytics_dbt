@@ -34,6 +34,10 @@ nfl_standings as (
         conference_rank
 
     from source
+
+    -- the raw data contains duplicated data for oone game week. The data for game_week 18 is duplicated.
+    -- the duplicates contain the value -26
+    where week <> -26
 )
 
 select * from nfl_standings
