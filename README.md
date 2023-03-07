@@ -27,7 +27,7 @@ Team_stats.: Scores per each quarter for games played during week 5 till 18. tot
 
 In this project the marts will be organised as wide tables per entity/topic instead of a classic dimensional star/snowflake schema. This design approach is common in the odern data stack with cheap costs of storage. 
 
-All datasests we will only focus on the regualar and postseason games. We don`t have enough data for interesting preseason analytics. Also the the matched Kaggle game data doesn`t include preseason, only regular and postseason scores.
+All datasests we will only focus on the regualar and postseason games. We don`t have enough data for interesting preseason analytics. Also the the matched Kaggle game data doesn`t include preseason, only regular and postseason scores. 
 
 ### NFL Teams 2021-2022 (SD dataset)
 
