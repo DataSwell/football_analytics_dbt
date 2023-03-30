@@ -1,5 +1,5 @@
 # football_analytics
-NFL and NCAAF analytics
+NFL and NCAAF analytics 
 
 
 ## nfl-games
