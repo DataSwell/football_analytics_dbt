@@ -10,3 +10,9 @@ seeds:
 #        tests:
 #          - not_null
 #          - unique
+
+  - name: calendar_short
+    description: modified csv file with the necessary date field
+    columns:
+      - name: date_num
+        description: Unique id for each day.
