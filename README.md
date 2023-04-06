@@ -10,7 +10,6 @@ The NFL team season stats for teh season 2023 only provides the total stats for 
 
 Because the project and data extracted was started during the season 2022, we didn`t have the data for the games 1-4.
 The NFL team season stats for the season 2022 has 30 teams with 17 games and 2 teams with only 16 games, because the buffalo-cincinatti game was posponed but never replayed.
-For the m
 
 ## Staging
 
