@@ -1,6 +1,6 @@
 with states as (
 
-    select * from {{ ref('states')}}
+    select * from {{ source('src_football', 'dim_regions')}}
 )
 
 select * from states

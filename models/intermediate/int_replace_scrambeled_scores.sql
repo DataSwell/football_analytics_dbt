@@ -1,7 +1,8 @@
 /*
-Some of the game scores in the NFL data are scrambeled by the provider. That means, if you use only a free account, 
-the data differ from the actual results. Therefore we use the kaggle data set, which privides us the correct game scores.
+Some of the game scores in the NFL data are scrambeled by the provider. That means, we you use only a free account, 
+the data is sligthly different then the real game data. Therefore we use the kaggle data set, which privides us the correct game scores.
 We have to map the scores from kaggle with the ones from SportsData API.
+But the kaggle dataset provides us only the data for the regular and post season. So we have no valid scores for preseason games.
 
 
 sd_teams: team_short = ARI, team_name = Arizona Cardinals
@@ -9,7 +10,6 @@ kg_teams:  team_name = Arizona Cardinals, team_id = ARI !!! not unique, because 
 
 But if we use fullname some games can not be matched, because in the SD-API data team table, only exists Commanders no Redskins or Team. 
 They treated the slowly changing dimension by overwriting the full team name. Kaggle geneated for every full name a new row.
-
 
 sd_games: home_team_id = 1 or home_team = ARI
 kg_games: team_home = Arizona Cardinals
@@ -64,6 +64,7 @@ nfl_games_final as (
         sdg.status,
         -- create column to map games with kaggle. The same games of both datasets can be selected by date and home team.
         concat_ws('-', cast(sdg.date as varchar(10)), sdg.home_team) as sd_game_id,
+        -- column from the kaggle_map CTE
         kgg.kgg_game_id,
         kgg.team_id as home_team_id,
         kgg.week as kgg_week,

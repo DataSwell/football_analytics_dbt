@@ -13,6 +13,16 @@ kg_stadiums as (
     select * from {{ ref('stg_kg_stadiums')}}
 ),
 
+states as (
+
+    select * from {{ ref('stg_states')}}
+),
+
+calendar as (
+
+    select * from {{ ref('stg_calendar')}}
+),
+
 kg_all_games as (
 
     select 
@@ -53,7 +63,12 @@ kg_all_games as (
         kgta.team_division_pre2002 as away_division_pre_2002,
         kgs.stadium_state,
         kgs.stadium_type,
-        kgs.stadium_surface
+        kgs.stadium_surface,
+        sta.state_id,
+        sta.state_name,
+        sta.region,
+        cal.month_name as month,
+        cal.day_name as day
 
     from kg_games kgg
 
@@ -61,6 +76,8 @@ kg_all_games as (
     left join kg_teams kgth on kgg.team_home = kgth.team_name
     left join kg_teams kgta on kgg.team_away = kgta.team_name
     left join kg_stadiums kgs on kgg.stadium_name = kgs.stadium_name
+    left join states sta on kgs.stadium_state = state_id
+    left join calendar cal on kgg.date = cal.date
 )
 
 select * from kg_all_games

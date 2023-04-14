@@ -95,3 +95,12 @@ sources:
             tests:
             - not_null
             - unique
+      
+      - name: dim_regions
+        description: List of the states of the USA
+        columns:
+          - name: state_id
+            desscription: Unique ID for each state
+            tests:
+            - not_null
+            - unique

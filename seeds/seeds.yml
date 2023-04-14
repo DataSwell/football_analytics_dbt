@@ -5,7 +5,7 @@ seeds:
   - name: states
     description: List of the american states and their shortcuts
     columns:
-      - name: states.State_ID
+      - name: State_ID
         description: Unique id for each state.
 #        tests:
 #          - not_null
