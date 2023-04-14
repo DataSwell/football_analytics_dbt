@@ -57,7 +57,7 @@ nfl_games_final as (
     -- joining the teams table two times to get the hometeam and the awayteam da
     left join teams teah on gam.home_teamid = teah.team_id
     left join teams teaa on gam.away_teamid = teaa.team_id
-    left join stadiums std on std.stadium_id = std.stadium_id
+    left join stadiums std on gam.stadiumid = std.stadium_id
     left join states sta on std.stadium_state = sta.state_id
     left join calendar cal on gam.date = cal.date
 

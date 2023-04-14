@@ -28,26 +28,32 @@ kg_all_games as (
     select 
         kgg.*,
         case 
+            when kgg.home_or_away_win = 'Tie' then 'Tie'
             when kgg.home_or_away_win = 'Hometeam win' and kgth.team_id = kgg.team_favorite_id then 'yes'
             else 'no'
             end as favorite_win,
         case
+            when kgg.home_or_away_win = 'Tie' then null
             when kgg.home_or_away_win = 'Hometeam win' then kgth.team_id
             else kgta.team_id
             end as winner_team_id,
         case
+            when kgg.home_or_away_win = 'Tie' then null
             when kgg.home_or_away_win = 'Hometeam win' then kgth.team_conference
             else kgta.team_conference
             end as winner_team_conference_post_2002,
         case
+            when kgg.home_or_away_win = 'Tie' then null
             when kgg.home_or_away_win = 'Hometeam win' then kgth.team_division
             else kgta.team_division
             end as winner_division_post_2002,
         case
+           when kgg.home_or_away_win = 'Tie' then null
             when kgg.home_or_away_win = 'Hometeam win' then kgth.team_conference_pre2002
             else kgta.team_conference_pre2002
             end as winner_conference_pre_2002,
         case
+            when kgg.home_or_away_win = 'Tie' then null
             when kgg.home_or_away_win = 'Hometeam win' then kgth.team_division
             else kgta.team_division
             end as winner_division_pre_2002,
