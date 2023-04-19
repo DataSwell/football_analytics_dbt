@@ -8,24 +8,22 @@ Transforming and analysing the extracted NFL and College (NCAA) football data (h
 ![DWH-structure](https://user-images.githubusercontent.com/63445819/233022217-e4004b46-4d0c-46e9-9bcb-765512800c5b.png)
 
 ## NFL-Analytics
-
+In this project are two different data sources for the NFL data. One dataset from kaggle which provides the data for all seasons since 1966 till 2022. The other data is from the API SportsData.io which provides more information then the kaggle set. But some of the information like scores are scrambeled, what means they are not the real scores.
 
 ### Staging
 All staging models contain the prefix "stg". The source tables which deliver the data for the staging models are configured in the sources.yml file. The description of the staging models and the generic tests (not null, unique, relationships) are configured in the staging.yml file.
 ![staging_yml_screenshot](https://user-images.githubusercontent.com/63445819/233024130-68f89395-0140-4a48-acf6-28777237e486.png)
 
 For each raw data table exists one staging model. The models process light transformations of the raw data like renaming, filtering, concating, casting etc.
+
 ![staging_kg_games](https://user-images.githubusercontent.com/63445819/233024951-40f18c43-853c-4b42-be7e-86b3df342187.png)
 
 
-Standings_2022: Contains weekly data for the standing of each team. This allows us to analyse which team improved over time or has the most range between ranked in the bottom/top. Because of the startdate of this project the data of the weeks 1-3 are missing. The ranking data is per division and conference.
-
 ### Intermediate
+The intermediate model int_replace_scrambeled_scores handles the problem with the scrambeled scores of the data from SportsData.io. We do not want to override the scrambeled scores, thats why we add the real scores and additional data from the kaggle staging models. It is necessary to create a new key in both data sets to join the data for the same games. A unique combination for a key is the date of the game and the name of the hometeam. We create the key by casting the date to a varchar and concatting it with the hometeam name. 
 
-standings_2022: Aggregate the Conference and Division ranks. Count amount of individual ranks and the total sum for the 15 weeks. For example, a team was placed 10 weeks at rank 1, 3 weeks at rank 2 and 2 weeks at rank 4. The total sum for the 15 game_weeks in 2022 would be 24 (10x1 + 3x2, 2x4). The MIN, MAX, AVG and range between MIN & MAX for each team.
+![int_model](https://user-images.githubusercontent.com/63445819/233028823-5a96c15b-a9b2-4ee0-813d-36e1690a5bb5.png)
 
-
-Team_stats.: Scores per each quarter for games played during week 5 till 18. total score per quarter and game , percentage points per quarter of total points. Average Points per quarter (total points per quarter / by games played).
 
 ### Marts 
 In this project the marts will be organised as wide tables per entity/topic instead of a classic dimensional star/snowflake schema. This design approach is common in the odern data stack with cheap costs of storage. 
@@ -33,5 +31,6 @@ In this project the marts will be organised as wide tables per entity/topic inst
 
 
 ## NCAA-Analytics
-
+**In progress** 
+The staging layer are already finished. Data marts, analytics and visualization needs  to be completed.
 
