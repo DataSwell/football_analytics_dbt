@@ -34,7 +34,22 @@ The marts join the transformed data from the staging and intermediate models and
 
 
 ### Analytics & Visualization
+The NFL data marts are accessed by MS PowerBI.
 
+The image below shows the data for all seasons from 1966-2022 (slicer on the right) but only the regular season games. The fields for the postseason games (Wildcard, Division, Conference, Superbowl) are deactivated. 
+- Dallas is the team with the most wins over all seasons. But it is important to know that the teams exists for different years. Houston is the newest team of the NFL, so it is not surprising, that this team has the fewest wins.
+- Over the years the amount of scored points increased, that is the result of more pass then run offenses, as well as the whole improvement of the sport and athletics. 1982 is a specuial year with a big drop in the amount of scored points. Because of a long strike of the players the season was reduced from 16 games per team to 9 games.
+- Around 57% of the regular season games was won by the hometeam, which shows the advantage of homegames. 
+- In total the teams of the NFC Conference have won more regular season games then the teams of the AFC.
+
+![nfl_all_seasons_regularseason](https://user-images.githubusercontent.com/63445819/233038176-a22f83f4-b2f6-41cd-b7df-a590b328fd0e.png)
+
+Compared to the data of the postseason (Playoffs and Superbowl) we can identify some differences. 
+- Dallas was the team with the most regular season wins. That shows that they made it often into the playoffs, but there they are not as successful as other teams like New England who won a lot of SUperbowl ins the last 20 years.
+- The increasing trend of scoring more points also exists for postseason games.
+- The win percentage for hometeams is by 65% compared to the 57% of the regular season. But if we only select the data for Superbowl games, the win percentage drops to 54%. A reason for that will be, that the stadium for the super bowl is decided before the season. At this point it is not clear which teams are playing in the superbowl. In most cases they play in a neutral Stadium and the amount of fans for each team si equal or the people in the stadium are neutral, that reduces the crowd/fan-factor.
+
+![nfl_all_seasons_postseason](https://user-images.githubusercontent.com/63445819/233038211-ba7b94ab-f18c-48a7-ba04-2b21b745d5c2.png)
 
 
 ## NCAA-Analytics
