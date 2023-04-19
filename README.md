@@ -26,7 +26,14 @@ The intermediate model int_replace_scrambeled_scores handles the problem with th
 
 
 ### Marts 
-In this project the marts will be organised as wide tables per entity/topic instead of a classic dimensional star/snowflake schema. This design approach is common in the odern data stack with cheap costs of storage. 
+In this project the marts will be organised as wide tables per entity/topic instead of a classic dimensional star/snowflake schema. This design approach is common in the modern data stack with cheap costs of storage. 
+
+The marts join the transformed data from the staging and intermediate models and maybe add new columns. In this layer are no complex functions or transformations. All mart models start with the prefix "mrt". Special for this data structure is that each row contains a hometeam and a awayteam. Because of that we have to join the teams table twice but on different coluns. One join to add the data for the hometeam and the same for the awayteam. The tables need to get different aliases.
+
+![mrt_model](https://user-images.githubusercontent.com/63445819/233033200-d8056ef0-5026-400a-95cb-0e0ca35a1d11.png)
+
+
+### Analytics & Visualization
 
 
 
