@@ -17,8 +17,8 @@ kg_games as (
         team_away,
         score_away,
         case 
-            when score_home > score_away then 'Hometeam win' 
-            when score_home < score_away then 'Awayteam win' 
+            when score_home > score_away then 'Hometeam' 
+            when score_home < score_away then 'Awayteam' 
             else 'Tie'
             end as home_or_away_win,
         case when team_favorite_id = 'NaN' then null else team_favorite_id end,

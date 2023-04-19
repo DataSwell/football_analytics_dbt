@@ -28,6 +28,7 @@ kg_all_games as (
     select 
         kgg.*,
         case 
+            when team_favorite_id is null then 'no favorite'
             when kgg.home_or_away_win = 'Tie' then 'Tie'
             when kgg.home_or_away_win = 'Hometeam win' and kgth.team_id = kgg.team_favorite_id then 'yes'
             else 'no'
