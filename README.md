@@ -51,6 +51,13 @@ Compared to the data of the postseason (Playoffs and Superbowl) we can identify 
 
 ![nfl_all_seasons_postseason](https://user-images.githubusercontent.com/63445819/233038211-ba7b94ab-f18c-48a7-ba04-2b21b745d5c2.png)
 
+The image below shows another sheet with stats to compare the teams when the play as hometeam or awayteam. Some teams are really strong at home, but struggle at roadgames. Also this is the data of the SportsData mart, which only contains data for the seasons 2021 and 2022.
+
+- The bar chart in the middle shows the games won as hometem and awayteam. The Miami Dolphins who won 12 games at home and only 6 games on the road. The opposite are the Arizona Cardinals, who won only 4 games at home but 11 games on the road.
+- 
+
+![nfl_home_vs_away_21_22](https://user-images.githubusercontent.com/63445819/233043939-b2050acc-b6e1-4182-b3c1-99ca3078d10e.png)
+
 
 ## NCAA-Analytics
 **In progress** 
